@@ -1,23 +1,45 @@
 
-const title = document.querySelector(".hello h1"); // <h1>Grab me!</h1>
+const h1 = document.querySelector(".hello h1"); // <h1>Grab me!</h1>
 
 function handleClick(){
-  title.style.color = "red";
+  h1.style.color = "red";
 }
 
 function handleMouseEnter(){
-  title.style.color = "blue";
+  h1.style.color = "blue";
 }
 
 function handleMouseOut(){
-  title.style.color = "black";
+  h1.style.color = "black";
 }
 
-title.addEventListener("click", handleClick);
-title.addEventListener("mouseenter", handleMouseEnter)
-title.addEventListener("mouseout", handleMouseOut)
+function handleResize(){
+  document.body.style.backgroundColor = "tomato";
+}
 
-console.log(title);
+function handleCopy(){
+  alert("복사할수없습니다!");
+}
+
+function handleoffline(){
+  alert("SOS no WIFI!");
+}
+
+function handleonline(){
+  alert("SOS ONLINE!");
+
+}
+
+
+h1.onclick = handleClick;
+h1.addEventListener("mouseenter", handleMouseEnter)
+h1.addEventListener("mouseout", handleMouseOut)
+
+window.addEventListener("resize", handleResize);
+window.addEventListener("copy", handleCopy);
+window.addEventListener("offline", handleoffline);
+window.addEventListener("online", handleonline);
+
 
 
  
