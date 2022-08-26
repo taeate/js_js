@@ -1,13 +1,8 @@
 
-function sayHello(){
+const title = document.querySelector(".hello h1"); // <h1>Grab me!</h1>
 
-  let name = prompt("이름을 입력하세요.");
+console.log(title);
 
-  console.log("Hello my name is " + name);
-  
-  alert(name + "님 환영합니다.");
 
-  return name;
-}
+ 
 
-document.write(sayHello() + "님");
