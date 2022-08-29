@@ -1,17 +1,12 @@
+const loginInput = document.querySelector('#login-form input');
+const loginbutton = document.querySelector('#login-form button');
 
-const h1 = document.querySelector(".hello h1"); // <h1>Grab me!</h1>
-
-function handleClick(){
-
-  const clickedClass = "clicked";
-  h1.classList.toggle("clicked");
+function onLoginBtnClick() {
+  const username = loginInput.value;
+  if(username === ""){
+    alert("이름을 입력해주세요.");
+  } else if(username.length > 15){
+    alert("너무 길어요.");
+  } 
 }
-
- 
-h1.addEventListener('click', handleClick);
-
-
-
-
- 
-
+loginbutton.addEventListener('click', onLoginBtnClick);
