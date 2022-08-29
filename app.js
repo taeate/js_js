@@ -10,12 +10,13 @@ const USERNAME_KEY = 'username';
 function onLoginSubmit(event) {
   event.preventDefault(); //기본 동작 멈춤
   loginForm.classList.add(HIDDEN_CLASSNAME); // form에 hidden class 추가
-  const username = loginInput.value; // loginInput 값을 변수에 저장
-  localStorage.setItem(USERNAME_KEY, username);
-  paintGretting(username);
+   // loginInput 값을 변수에 저장
+  localStorage.setItem(USERNAME_KEY, loginInput.value);
+  paintGretting();
 }
 
-function paintGretting(username){
+function paintGretting(){
+  const username = localStorage.getItem(USERNAME_KEY);
   gretting.innerText = `안녕하세요 ${username} 님 반갑습니다.`; 
   gretting.classList.remove(HIDDEN_CLASSNAME);
 }
@@ -28,5 +29,5 @@ if(savedUsername === null){
   loginForm.addEventListener('submit', onLoginSubmit);
 } else {
   // show the gretting
-  paintGretting(savedUsername);
+  paintGretting();
 }
