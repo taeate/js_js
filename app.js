@@ -3,18 +3,16 @@ const h1 = document.querySelector(".hello h1"); // <h1>Grab me!</h1>
 
 function handleClick(){
 
-  const currentColor = h1.style.color;
-  let newColor;
+  const clickedClass = "clicked";
 
-  if(currentColor === "red"){
-    newColor = "blue";
+  if(h1.classList.contains(clickedClass)){
+    h1.classList.remove(clickedClass);
   }else{
-    newColor = "red";
+    h1.classList.add(clickedClass);
   }
-  h1.style.color = newColor;
 }
 
-
+ 
 h1.addEventListener('click', handleClick);
 
 
